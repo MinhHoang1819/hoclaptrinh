@@ -1,0 +1,20 @@
+Nhap du lieu 
+
+cin >> tenBien; //nhap cho 1 bien
+cin >> bien1 >> bien2 >> bien3; //nhap cho nhieu bien tren 1 dong
+
+In du lieu
+
+cout << tenBien; // phu hop cho bien so nguyen, xau ki tu
+* doi voi (float, double)
+
+cout << fixed << setprecision (9);//thiet lap khuon dang in, 9: 9 chu so sau dau cham
+cout << tenBien;
+* Neu in nhieu bien tren 1 dong thi:
+cout << bien1 << " " << bien2;
+* Neu in va xuong dong thi:
+cout << tenBien << end1; hoac cout << tenBien << '\n';
+* Neu muon vao cac thong diep dinh kem thi:
+cout << a " + " << b << " = " << a + b << endl;
+a= 5, b= 7
+5+7=12
