@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   cout << fixed << setprecision (6);
+   int n; cin >> n;
+   double H = 0.0;
+   for (int i = 1; i<=n; i++){
+       H = H + 1.0/i;
+   }
+   cout << H;
+   return 0;
+}
