@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+{
+    cout << fixed << setprecision (6);
+    int n; cin >> n;
+    if ((n==0) or (n==1))
+        cout << 1;
+    else{
+        if (n%2==0){
+            ll GT=1;
+            for (int i = 2; i<=n; i=i+2)
+                GT = GT *i;
+            cout << GT;
+        }
+        else{
+            ll GT=1;
+            for (int i = 3; i<=n; i=i+2)
+                GT = GT *i;
+            cout << GT;
+        }
+    }
+    return 0;
+}
