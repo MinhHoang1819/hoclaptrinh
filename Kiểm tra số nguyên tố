@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+{
+    cout << fixed << setprecision (6);
+    int n; cin >> n;
+    //n là số nguyên tố nếu nó có chính xác 2 ước số (1 và chính nó)
+    int c=0;
+    for (int i = 1; i<=n; i++)
+        if (n%i==0)
+            c++;
+    if (c==2)
+        cout << "Yes";
+    else
+        cout << "No";
+    return 0;
+}
