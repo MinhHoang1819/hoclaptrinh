@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+{
+    int n, p, q;
+    cin >> n >> p >> q;
+    ll S=0;
+    for (int i = 1; i<=n; i++){
+        if ((i%p==0) or (i%q==0))
+            cout << i << ' ';
+    }
+    return 0;
+}
