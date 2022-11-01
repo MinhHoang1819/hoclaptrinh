@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout << fixed << setprecision(6);
+    float n, m, p; 
+    cin >> n >> p >> m;
+    int sothang=0;
+    while (n < m){
+        n = n + n * p/100;
+        sothang++;
+    }   
+    cout << sothang;
+    return 0;
+}
