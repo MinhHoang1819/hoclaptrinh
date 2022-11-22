@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+ll Fibo(int n){
+    if ((n==0) or (n==1)) return 1;
+    else return Fibo(n-1) + Fibo(n-2);
+}
+ll fact(int n){
+    if (n==0) return 1;
+    else return fact(n-1)*n;
+}
+int main(){
+    cout << fixed << setprecision(6);
+    int n; cin >> n;
+    //tinh so Fibo
+    ll k=Fibo(n);
+    cout << k << endl;
+    // tinh so giai thua
+    ll f= fact(n);  //n <=20
+    cout << f << endl;
+    return 0;
+}
