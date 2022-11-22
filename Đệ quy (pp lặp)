@@ -1,0 +1,17 @@
+Đề: tính tổng các chữ số của 1 số nguyên dương cho trước
+n=12347->S=17
+n=927->S=18
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n, S;
+    cin >> n;
+    S = 0;
+    while (n!=0){
+        S= S + n%10;
+        n = n/10;
+    }
+    cout << S;
+    return 0;
+}
