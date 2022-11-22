@@ -8,6 +8,7 @@ int sum(int n){
 int main(){
   cout << fixed << setprecision(6);
   int n; cin >> n;
-  ll 
+  ll k=sum(n);
+  cout << k << endl;
   return 0;
 }
