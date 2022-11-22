@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int sum(int n){
+  if(n==0) return 0;
+  else return n%10 + sum(n/10);
+}
+int main(){
+  cout << fixed << setprecision(6);
+  int n; cin >> n;
+  ll 
+  return 0;
+}
