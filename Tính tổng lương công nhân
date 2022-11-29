@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const int MAX = 100000;
+int arr[MAX];
+int main(){
+    ll S = 0;
+    int i=0;
+    while (true){
+        cin >> arr[i];
+        if (arr[i] == -1) break;
+        i++;
+    }
+    int n=i;
+    for (int i=0; i<n; i++)
+        S += arr[i];
+    cout << S;
+    return 0;
+}
