@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n; cin >> n;
+    fflush (stdin); //xoa bo dem
+    string A[i];
+    // nhap du lieu cac phan tu trong mang
+    for (int i=0; i<n; i++){
+        getline (cin, A[i]);
+    }
+    // in an cac phan tu trong mang
+    for (int i=0; i<n; i++){
+        cout << A[i] << endl;
+        string min = A[0];
+        for (int i=1; i<n; i++)
+        if (A[i]<min) min = A[i];
+    }
+    cout << min << "\n";
+    return 0;
+}
