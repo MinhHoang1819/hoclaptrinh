@@ -6,7 +6,7 @@ int main()
 {
     int n; cin >> n;
     fflush (stdin); //xoa bo dem
-    string A[i];
+    string A[n];
     // nhap du lieu cac phan tu trong mang
     for (int i=0; i<n; i++){
         getline (cin, A[i]);
