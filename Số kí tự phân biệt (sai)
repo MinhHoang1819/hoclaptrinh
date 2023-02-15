@@ -1,0 +1,21 @@
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    getline (cin, s);
+    int dem[26];
+    for (int i=0; i<=25; i++) dem[i]=0;
+    for (int i=0; i<s.size(); i++)
+        if (s[i]>='a' && s[i]<='z' && dem[s[i]-'a'] == 0) dem[s[i]-'a']=0;
+    for (int i=0; i<s.size(); i++)
+        if (s[i]>='A' && s[i]<='Z' && dem[s[i]-'A'] == 0) dem[s[i]-'A']=0;
+    int tong=0;
+    for (int i=0; i<=25; i++)
+        if (dem[i] == 1) tong++;
+    cout << dem;
+    return 0;
+}
