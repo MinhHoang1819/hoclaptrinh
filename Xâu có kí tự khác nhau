@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+void xacdinh(string s){
+    int dem[26];
+    for (int i=0; i<26; i++) dem[i]=0;
+    for (int i=0; i<s.size(); i++) dem[s[i]-'a']++;
+    for (int i=0; i<26; i++)
+        if (dem[i]>1){
+            cout << "No"; return;
+        }
+    cout << "Yes";
+}
+
+int main()
+{
+    string s;
+    getline (cin, s);
+    xacdinh(s);
+    return 0;
+}
