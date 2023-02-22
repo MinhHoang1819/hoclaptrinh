@@ -4,6 +4,16 @@
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+bool ktranguyento(int t){
+	if (t<2) return 0;
+	for (int i=2; i<=sqrt(t); i++){
+		if (t%i == 0){
+			return 0;
+		}
+	}
+	return 1;
+}
+
 int main(int argc, char** argv) {
 	string s;
 	getline (cin, s);
@@ -16,7 +26,9 @@ int main(int argc, char** argv) {
 				t = t*10 + (s[j] - '0');
 				j++;
 			}
-			cout << t <<"\n";
+			if (ktranguyento(t) == true){
+				cout << t <<"\n";
+			}
 			i=j;
 		}else i++;
 	}
