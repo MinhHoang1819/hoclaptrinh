@@ -14,23 +14,29 @@ void chenDau(int x, node *&first){
 	p->link = first;
 	first = p;
 }
-void inan(node *first){
+void inChan(node *first){
 	if (first != NULL){
-		cout << first->nd << "\t";
-		inan(first->link);
+		if (first->nd%2 == 0) cout << first->nd << "\t";
+		inChan(first->link);
 	}
+}
+int tinhTong(node *first){
+	if (first != NULL){
+		if (first->nd%2 == 0){
+			cout << first->nd << "\t";
+		}else return 0;
+		return first->nd + tinhTong(first->link);
+	}else return 0;
 }
 int main(int argc, char** argv) {
 	int n; cin >> n;
 	for (int i=1; i<=n; i++){
 		int x; cin >> x;
-		if (x%2 == 0){
-			chenDau(x, first);
-		}
+		chenDau(x, first);
 	}
 	/*chenDau(5, first);
 	chenDau(7, first);
 	chenDau(9, first);*/
-	inan(first);
+	cout << tinhTong(first);
 	return 0;
 }
