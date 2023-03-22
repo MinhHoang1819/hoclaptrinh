@@ -5,13 +5,19 @@ struct node{
 	int nd;
 	node *link;
 };
-node *first=NULL;
+node *first=NULL, *first1=NULL;
 void chenCuoi(int x, node *&first){
 	if (!first){	//! first == (first=NULL)
 		first = new node;
-		first->nd;
+		first->nd=x;
 		first->link=NULL;
-	}else chenCuoi(x, first->link)
+	}else chenCuoi(x, first->link);
+}
+void chenDau(int x, node *&first1){
+	node *p = new node;
+	p->nd=x;
+	p->link=first1;
+	first1 = p;
 }
 void inAn(node *first){
 	if (first){
@@ -19,10 +25,19 @@ void inAn(node *first){
 		inAn(first->link);
 	}
 }
+void chen(node *first, node *&first1){
+	if (first != NULL){
+		chenDau(first->nd, first1);
+		chen(first->link, first1);
+	}
+}
 int main(int argc, char** argv) {
 	chenCuoi(5, first);
 	chenCuoi(7, first);
 	chenCuoi(9, first);
-	inAn(first);
+	chenCuoi(11, first);
+	inAn(first); cout << "\n";
+	chen(first, first1);
+	inAn(first1);
 	return 0;
 }
