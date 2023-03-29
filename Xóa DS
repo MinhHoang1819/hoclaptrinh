@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+struct node{
+	int nd;
+	node *link;
+};
+node *first=NULL;
+void chenCuoi(int x, node *&first){
+	if (!first){
+		first = new node;
+		first->nd=x;
+		first->link=NULL;
+	}else chenCuoi(x, first->link);
+}
+void xoaBK(int x, node *&first){
+	if (first)
+		if (first->nd == x){
+			node *p = first;
+			first = first->link;
+			delete p;
+		}else xoaBK(x, first->link);
+}
+void inAn(node *first){
+	if (first){
+		cout << first->nd << "\t";
+		inAn(first->link);
+	}
+}
+int main(int argc, char** argv) {
+	chenCuoi(3, first);
+	chenCuoi(7, first);
+	chenCuoi(5, first);
+	chenCuoi(9, first);
+	xoaBK(3, first);
+	inAn(first);
+	return 0;
+}
