@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+struct Node{
+	unsigned int data;
+	struct Node *next;
+};
+Node *L=NULL;
+void InsertLast(unsigned int x, Node *&First){
+	if (!First){
+		First = new Node;
+		First->data = x;
+		First->next = NULL;
+	}else InsertLast(x, First->next);
+}
+void Print(Node *First){
+	if (First!=NULL){
+		cout << First->data << "\t";
+		Print(First->next);
+	}
+}
+void DeleteAnyWhere(unsigned int x, Node *&First){
+	if (First->data == x){
+		Node *p = First;
+		First = First->next;
+		delete p;
+	}else DeleteAnyWhere(x, First->next);
+}
+void DeleteDuplicate(Node *&L){
+	if (L->next!=NULL){
+		if (L->data == L->next->data){
+			DeleteAnyWhere(L->next->data, L);
+			DeleteDuplicate(L);
+		}else DeleteDuplicate(L->next);
+	}
+}
+int main(int argc, char** argv) {
+	int N; cin >> N;
+	unsigned int x;
+	for (int i=1; i<=N; i++){
+		cin >> x;
+		InsertLast(x, L);
+	}
+	Print(L); cout << "\n";
+	DeleteDuplicate(L);
+	Print(L);
+	return 0;
+}
