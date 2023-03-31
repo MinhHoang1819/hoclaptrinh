@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+struct Node{
+	unsigned int data;
+	struct Node *next;
+};
+Node *L1=NULL, *L2=NULL, *L3=NULL;
+void InsertLast(unsigned int x, Node *&First){
+	if (!First){
+		First = new Node;
+		First->data = x;
+		First->next = NULL;
+	}else InsertLast(x, First->next);
+}
+void Print(Node *First){
+	if (First!=NULL){
+		cout << First->data << "\t";
+		Print(First->next);
+	}
+}
+void GhepDS(Node *L1, Node *L2, Node *&L3){
+	while (L1 && L2){
+		if (L1->data > L2->data){
+			InsertLast(L2->data, L3);
+			L2 = L2->next;
+		}else {
+			InsertLast(L1->data, L3);
+			L1 = L1->next;
+		}
+	}
+	while (L1){
+		InsertLast(L1->data, L3);
+		L1 = L1->next;
+	}
+	while (L2){
+		InsertLast(L2->data, L3);
+		L2 = L2->next;
+	}
+}
+int main(int argc, char** argv) {
+	int N, M; cin >> N >> M;
+	unsigned int x;
+	for (int i=1; i<=N; i++){
+		cin >> x;
+		InsertLast(x, L1);
+	}
+	for (int i=1; i<=M; i++){
+		cin >> x;
+		InsertLast(x, L2);
+	}
+	GhepDS(L1, L2, L3);
+	Print(L3);
+	return 0;
+}
