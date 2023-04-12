@@ -1,0 +1,17 @@
+#include <iostream>
+#include <list>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	int n, c, x; cin >> n >> c;
+	list<int> l;
+	for (int i=1; i<=n; i++){
+		cin >> x;
+		l.push_back(x);
+	}
+	if (c == 1){
+		l.remove_if([](int a){return a%2 == 1;});
+	}else l.remove_if([](int a){return a%2 == 0;});
+	return 0;
+}
